@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/icon.png-487276ed1e3a0c39cad0279d744ee560.stex"
+path="res://.import/Play.png-361a941b7c8d9057f9d16beee2a613d5.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://icon.png"
-dest_files=[ "res://.import/icon.png-487276ed1e3a0c39cad0279d744ee560.stex" ]
+source_file="res://Imatges/Free/Menu/Buttons/Play.png"
+dest_files=[ "res://.import/Play.png-361a941b7c8d9057f9d16beee2a613d5.stex" ]
 
 [params]
 

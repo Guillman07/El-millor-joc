@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/icon.png-487276ed1e3a0c39cad0279d744ee560.stex"
+path="res://.import/Fall (32x32).png-fd4d1538ed4300ec14c5f09ab93e5102.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://icon.png"
-dest_files=[ "res://.import/icon.png-487276ed1e3a0c39cad0279d744ee560.stex" ]
+source_file="res://Imatges/Free/Main Characters/Mask Dude/Fall (32x32).png"
+dest_files=[ "res://.import/Fall (32x32).png-fd4d1538ed4300ec14c5f09ab93e5102.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/icon.png-487276ed1e3a0c39cad0279d744ee560.stex"
+path="res://.import/Idle.png-b28ccd4f839196f0fd43228fff2d4695.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://icon.png"
-dest_files=[ "res://.import/icon.png-487276ed1e3a0c39cad0279d744ee560.stex" ]
+source_file="res://Imatges/Free/Traps/Trampoline/Idle.png"
+dest_files=[ "res://.import/Idle.png-b28ccd4f839196f0fd43228fff2d4695.stex" ]
 
 [params]
 
