@@ -72,5 +72,5 @@ shape = SubResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 13 )
 animation = "Idle"
-frame = 3
+frame = 9
 playing = true
