@@ -36,19 +36,25 @@ position = Vector2( 510, -32 )
 shape = SubResource( 2 )
 
 [node name="Woodfloor" parent="." instance=ExtResource( 2 )]
-position = Vector2( 121, -2 )
+position = Vector2( 0, 0 )
 
 [node name="Woodfloor2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 535, 103 )
+position = Vector2( 0, 0 )
 
 [node name="Smallwoodloor" parent="." instance=ExtResource( 3 )]
-position = Vector2( 349, 330 )
+position = Vector2( 76, 253 )
 
 [node name="Smallwoodloor3" parent="." instance=ExtResource( 3 )]
-position = Vector2( 585, 336 )
+position = Vector2( 186, 357 )
 
 [node name="Smallwoodloor4" parent="." instance=ExtResource( 3 )]
-position = Vector2( 471, 327 )
+position = Vector2( 367, 175 )
 
 [node name="Smallwoodloor2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 708, 339 )
+position = Vector2( 370, 339 )
+
+[node name="Smallwoodloor5" parent="." instance=ExtResource( 3 )]
+position = Vector2( 226, 171 )
+
+[node name="Smallwoodloor6" parent="." instance=ExtResource( 3 )]
+position = Vector2( 492, 238 )
