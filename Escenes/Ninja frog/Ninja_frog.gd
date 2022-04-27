@@ -4,7 +4,7 @@ var base_speed = 300
 var speed = Vector2.ZERO
 var direccio = Vector2.DOWN
 var gravetat = Vector2.DOWN * 980
-var jump_speed = -400
+var jump_speed = -300
 var left_jumps = 1
 signal hit
 
@@ -29,13 +29,13 @@ func _physics_process(delta):
 	speed.x = 0
 	speed += gravetat * delta
 	
-	if Input.is_action_just_pressed("Up 1")and is_on_floor():
+	if Input.is_action_pressed("Up 1")and is_on_floor():
 		speed.y = jump_speed
-	if Input.is_action_just_pressed("Right 1"):
+	if Input.is_action_pressed("Right 1"):
 		speed += Vector2.RIGHT * base_speed
-	if Input.is_action_just_pressed("Left 1"):
+	if Input.is_action_pressed("Left 1"):
 		speed += Vector2.LEFT * base_speed
-	if Input.is_action_just_pressed("Up 1"):
+	if Input.is_action_pressed("Up 1"):
 		if left_jumps == 1:
 			speed.y = jump_speed
 			left_jumps -= 1
@@ -48,17 +48,17 @@ func _physics_process(delta):
 	
 func animation(speed):
 	if speed.x > 0 and speed.y > -2:
-		$ninja_frog.play("Run")
-		$ninja_frog.flip_h = false
+		$AnimatedSprite.play("Run")
+		$AnimatedSprite.flip_h = false
 	elif speed.x < 0 and speed.y > -2:
-		$ninja_frog.play("run")
-		$ninja_frog.flip_h = true
+		$AnimatedSprite.play("Run")
+		$AnimatedSprite.flip_h = true
 	
 	if abs(speed.x) < 0.1 and speed.y > -1:
-		$ninja_frog.play("idle")
+		$AnimatedSprite.play("Idle")
 		
 	if speed.y < -2:
-		$ninja_frog.play("jump")
+		$AnimatedSprite.play("Jump")
 	
 #func start(pos):
 	#position = pos
