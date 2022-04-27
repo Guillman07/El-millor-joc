@@ -48,7 +48,7 @@ func _physics_process(delta):
 	
 func animation(speed):
 	if speed.x > 0 and speed.y > -2:
-		$ninja_frog.play("run")
+		$ninja_frog.play("Run")
 		$ninja_frog.flip_h = false
 	elif speed.x < 0 and speed.y > -2:
 		$ninja_frog.play("run")
