@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Imatges/Imatges2/background.png" type="Texture" id=1]
 [ext_resource path="res://Escenes/Woodfloor.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Escenes/Smallwoodfloor.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Escenes/MASK DUDEEE.tscn" type="PackedScene" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 72.5, 299.25 )
@@ -36,19 +37,11 @@ position = Vector2( 510, -32 )
 shape = SubResource( 2 )
 
 [node name="Woodfloor" parent="." instance=ExtResource( 2 )]
-position = Vector2( 121, -2 )
 
 [node name="Woodfloor2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 535, 103 )
-
-[node name="Smallwoodloor" parent="." instance=ExtResource( 3 )]
-position = Vector2( 349, 330 )
 
 [node name="Smallwoodloor3" parent="." instance=ExtResource( 3 )]
-position = Vector2( 585, 336 )
+position = Vector2( 1436, 341 )
 
-[node name="Smallwoodloor4" parent="." instance=ExtResource( 3 )]
-position = Vector2( 471, 327 )
-
-[node name="Smallwoodloor2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 708, 339 )
+[node name="KinematicBody2D" parent="." instance=ExtResource( 4 )]
+position = Vector2( 43, 463 )
