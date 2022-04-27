@@ -5,16 +5,19 @@ var velocitat = Vector2.ZERO
 var direccio = Vector2.DOWN
 var gravetat = Vector2.DOWN * 980
 var velocitat_salt = -340
+#var velocitat_avall = 1000
 
 func _physics_process(delta):
 	velocitat.x = 0
 	velocitat += gravetat * delta
-	if Input.is_action_pressed("mou dreta"):
+	if Input.is_action_pressed("Right 2"):
 		velocitat += Vector2.RIGHT * velocitat_base
-	if Input.is_action_pressed("mou esquerra"):
+	if Input.is_action_pressed("Left 2"):
 		velocitat += Vector2.LEFT * velocitat_base
-	if Input.is_action_just_pressed("mou amunt") and is_on_floor():
+	if Input.is_action_just_pressed("Up 2") and is_on_floor():
 		velocitat.y = velocitat_salt
+	#if Input.is_action_just_pressed("Down 2") and is_on_floor():
+		#velocitat.y = velocitat_avall
 		
 	
 	
@@ -22,17 +25,21 @@ func _physics_process(delta):
 	animation(velocitat)
 func animation(velocitat):
 	if velocitat.x > 0 and velocitat.y > -2:
-		$"MASK DUDE".play("Run")
-		$"MASK DUDE".flip_h = false
+		$MASKDUDE.play("Run")
+		$MASKDUDE.flip_h = false
 	elif velocitat.x < 0 and velocitat.y > -2:
-		$"MASK DUDE".play("Run")
-		$"MASK DUDE".flip_h = true
+		$MASKDUDE.play("Run")
+		$MASKDUDE.flip_h = true
 		
 	if abs(velocitat.x) < 0.1 and velocitat.y > -1:
-		$"MASK DUDE".play("Idle")
+		$MASKDUDE.play("Idle")
 		
 	if velocitat.y < -2:
-		$"MASK DUDE".play("Jump")
+		$MASKDUDE.play("Jump")
+		
+	if velocitat.y > -2:
+		$MASKDUDE.play()
+		
 
  
 

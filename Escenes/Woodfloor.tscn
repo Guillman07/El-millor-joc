@@ -72,6 +72,7 @@ tracks/2/keys = {
 }
 
 [node name="Woodfloor" type="KinematicBody2D"]
+position = Vector2( 500.507, 0 )
 motion/sync_to_physics = true
 
 [node name="Sprite" type="Sprite" parent="."]
