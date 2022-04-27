@@ -8,8 +8,9 @@
 [ext_resource path="res://Imatges/Ninja el frog/Main Characters/Ninja Frog/Hit (32x32).png" type="Texture" id=6]
 [ext_resource path="res://Imatges/Ninja el frog/Main Characters/Ninja Frog/Double Jump (32x32).png" type="Texture" id=7]
 [ext_resource path="res://Imatges/Ninja el frog/Main Characters/Ninja Frog/Fall (32x32).png" type="Texture" id=8]
-[ext_resource path="res://Escenes/Ninja_frog.gd" type="Script" id=9]
+[ext_resource path="res://Escenes/Ninja frog/Ninja_frog.gd" type="Script" id=9]
 [ext_resource path="res://Imatges/Ninja el frog/Main Characters/Ninja Frog/Wall Jump (32x32).png" type="Texture" id=10]
+
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 20.0
