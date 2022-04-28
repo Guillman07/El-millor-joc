@@ -6,46 +6,37 @@ var direccio = Vector2.DOWN
 var gravetat = Vector2.DOWN * 980
 var jump_speed = -300
 var left_jumps = 1
-signal hit
+#signal hit
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	$AnimatedSprite.play("Appear")
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
 
 func _on_AnimatedSprite_animation_finished():
 	if $AnimatedSprite.animation == 'Appear':
 		$AnimatedSprite.play('Idle')
-		
 
 func _physics_process(delta):
-	#position += speed * direccio * delta
 	speed.x = 0
 	speed += gravetat * delta
-	
-	if Input.is_action_pressed("Up 1")and is_on_floor():
-		speed.y = jump_speed
-	if Input.is_action_pressed("Right 1"):
+	if Input.is_action_pressed("Right 2"):
 		speed += Vector2.RIGHT * base_speed
-	if Input.is_action_pressed("Left 1"):
+	if Input.is_action_pressed("Left 2"):
 		speed += Vector2.LEFT * base_speed
-	if Input.is_action_pressed("Up 1"):
-		if left_jumps == 1:
+	if Input.is_action_just_pressed("Up 2"):
+		if left_jumps > 0:
 			speed.y = jump_speed
 			left_jumps -= 1
-		
-		
-	
-	
-	speed = move_and_slide(speed , Vector2.UP)# * direccio)
+	if is_on_floor():
+		left_jumps = 1
+
+#if Input.is_action_just_pressed("Down 2") and is_on_floor():
+#velocitat.y = velocitat_avall
+
+
+
+	speed = move_and_slide(speed, Vector2.UP)
 	animation(speed)
-	
+
 func animation(speed):
 	if speed.x > 0 and speed.y > -2:
 		$AnimatedSprite.play("Run")
