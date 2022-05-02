@@ -14,6 +14,14 @@ config/name="Joc_amg"
 run/main_scene="res://Escenes/World.tscn"
 config/icon="res://icon.png"
 
+[display]
+
+window/size/fullscreen=true
+
+[global]
+
+windows=false
+
 [importer_defaults]
 
 texture={

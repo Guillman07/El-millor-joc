@@ -18,11 +18,11 @@ func _on_AnimatedSprite_animation_finished():
 func _physics_process(delta):
 	speed.x = 0
 	speed += gravetat * delta
-	if Input.is_action_pressed("Right 2"):
+	if Input.is_action_pressed("Right 1"):
 		speed += Vector2.RIGHT * base_speed
-	if Input.is_action_pressed("Left 2"):
+	if Input.is_action_pressed("Left 1"):
 		speed += Vector2.LEFT * base_speed
-	if Input.is_action_just_pressed("Up 2"):
+	if Input.is_action_just_pressed("Up 1"):
 		if left_jumps > 0:
 			speed.y = jump_speed
 			left_jumps -= 1
@@ -51,12 +51,6 @@ func animation(speed):
 	if speed.y < -2:
 		$AnimatedSprite.play("Jump")
 	
-#func start(pos):
-	#position = pos
-	#show()
-	#$CollisionShape2D.Disabled = false
-	
-#func _on_Area2D_body_entered(body):
-	#get_tree().change_scene("res://escenes/pantalla cossos.tscn")
+
 
 	
