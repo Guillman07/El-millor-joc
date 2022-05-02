@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Escenes/Global.gd" type="Script" id=1]
 [ext_resource path="res://Escenes/Ninja frog/Ninja_frog1.1.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Imatges/Fondos/game_background_1/layers/rocks_2.png" type="Texture" id=3]
 [ext_resource path="res://Imatges/Fondos/game_background_1/layers/rocks_1.png" type="Texture" id=4]
 [ext_resource path="res://Imatges/Fondos/game_background_1/layers/sky.png" type="Texture" id=5]
+[ext_resource path="res://Imatges/Fondos/game_background_1/layers/clouds_2.png" type="Texture" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 2008.5, 25.5 )
@@ -21,9 +22,6 @@ shape = SubResource( 1 )
 [node name="Ninja_frog" parent="." instance=ExtResource( 2 )]
 position = Vector2( 524, 330 )
 
-[node name="Camera2D" type="Camera2D" parent="Ninja_frog"]
-drag_margin_h_enabled = true
-
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -34,24 +32,36 @@ position = Vector2( 513, 301.375 )
 scale = Vector2( 0.546875, 0.580324 )
 texture = ExtResource( 5 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 6819.4, 1020.4 )
+region_rect = Rect2( -18.458, 3.02, 1e+11, 1342.61 )
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2( 0.8, 1 )
+motion_scale = Vector2( 0.1, 1 )
 
 [node name="Rocks1" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
 position = Vector2( 514.5, 295 )
 scale = Vector2( 0.554688, 0.594444 )
 texture = ExtResource( 4 )
 region_enabled = true
-region_rect = Rect2( -1655.02, 87.4151, 6728.52, 988.871 )
+region_rect = Rect2( -1655.02, 87.415, 1e+06, 988.871 )
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.2, 1 )
+
+[node name="Clouds2" type="Sprite" parent="ParallaxBackground/ParallaxLayer4"]
+position = Vector2( 526.5, 317.5 )
+scale = Vector2( 0.542187, 0.569444 )
+texture = ExtResource( 6 )
+region_enabled = true
+region_rect = Rect2( 13.728, -23.575, 1e+06, 1115.1 )
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2( 0.6, 1 )
+motion_scale = Vector2( 0.3, 1 )
 
 [node name="Rocks2" type="Sprite" parent="ParallaxBackground/ParallaxLayer3"]
 position = Vector2( 510, 307 )
 scale = Vector2( 0.544792, 0.569444 )
 texture = ExtResource( 3 )
 region_enabled = true
-region_rect = Rect2( 0, 56.3968, 6869.17, 1024.61 )
+region_rect = Rect2( 0, 56.397, 1e+07, 1024.61 )
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBackground"]
