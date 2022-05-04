@@ -64,8 +64,8 @@ tracks/1/keys = {
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Woodfloor" type="KinematicBody2D" parent="."]
-motion/sync_to_physics = true
+[node name="Woodfloor" type="RigidBody2D" parent="."]
+mode = 3
 script = ExtResource( 2 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Woodfloor"]
@@ -74,6 +74,7 @@ scale = Vector2( 0.461759, 0.494186 )
 polygon = PoolVector2Array( 45.1131, 90.3118, 54, 85, 367.792, 88.2883, 372.123, 102.453, 355.891, 118.641, 341.805, 122.688, 66.7694, 124.712, 42.9475, 100.429 )
 
 [node name="Sprite" type="Sprite" parent="Woodfloor"]
+visible = false
 scale = Vector2( 0.4, 0.2 )
 texture = ExtResource( 1 )
 
