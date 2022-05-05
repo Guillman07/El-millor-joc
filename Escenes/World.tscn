@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Escenes/Global.gd" type="Script" id=1]
 [ext_resource path="res://Escenes/Ninja frog/Ninja_frog1.1.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Imatges/Fondos/game_background_1/layers/rocks_1.png" type="Texture" id=4]
 [ext_resource path="res://Imatges/Fondos/game_background_1/layers/sky.png" type="Texture" id=5]
 [ext_resource path="res://Imatges/Fondos/game_background_1/layers/clouds_2.png" type="Texture" id=6]
+[ext_resource path="res://Escenes/Trampoline.tscn" type="PackedScene" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 2008.5, 25.5 )
@@ -65,3 +66,6 @@ region_enabled = true
 region_rect = Rect2( 0, 56.397, 1e+07, 1024.61 )
 
 [node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Trampoline" parent="." instance=ExtResource( 7 )]
+position = Vector2( 687, 545 )

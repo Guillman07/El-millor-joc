@@ -38,14 +38,14 @@ func _physics_process(delta):
 	animation(speed)
 
 func animation(speed):
-	if speed.x > 0.1 and speed.y > -2:
+	if speed.x > 0.1:
 		$AnimatedSprite.play("Run")
 		$AnimatedSprite.flip_h = false
-	elif speed.x < 0.1 and speed.y > -2:
+	elif speed.x < 0.1:
 		$AnimatedSprite.play("Run")
 		$AnimatedSprite.flip_h = true
 	
-	if abs(speed.x) < 0.1 and speed.y > -1:
+	if abs(speed.x) < 0.1:
 		$AnimatedSprite.play("Idle")
 		
 	if speed.y < -2:
