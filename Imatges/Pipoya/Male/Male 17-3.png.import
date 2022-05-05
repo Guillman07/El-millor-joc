@@ -1,0 +1,35 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/Male 17-3.png-00efaa5547c32160f0d5eba18f0b5174.stex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://Imatges/Pipoya/Male/Male 17-3.png"
+dest_files=[ "res://.import/Male 17-3.png-00efaa5547c32160f0d5eba18f0b5174.stex" ]
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=false
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+process/normal_map_invert_y=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0
