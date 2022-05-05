@@ -41,7 +41,7 @@ func animation(speed):
 	if speed.x > 0.1:
 		$AnimatedSprite.play("Run")
 		$AnimatedSprite.flip_h = false
-	elif speed.x < 0.1:
+	elif speed.x < -0.1:
 		$AnimatedSprite.play("Run")
 		$AnimatedSprite.flip_h = true
 	
