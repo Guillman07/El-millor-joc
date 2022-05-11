@@ -1,39 +1,42 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Imatges/Fondos/game_background_2/layers/sky.png" type="Texture" id=1]
 [ext_resource path="res://Escenes/Woodfloor.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Imatges/Fondos/game_background_2/layers/clouds_2.png" type="Texture" id=3]
 [ext_resource path="res://Escenes/MASK DUDEEE.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Imatges/Fondos/game_background_2/layers/clouds_1.png" type="Texture" id=5]
-[ext_resource path="res://Imatges/Fondos/game_background_2/game_background_2.png" type="Texture" id=6]
+[ext_resource path="res://Escenes/Stonefloottscn.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Imatges/Fondos/game_background_2/layers/clouds_3.png" type="Texture" id=7]
 [ext_resource path="res://Imatges/Ninja el frog/Traps/Saw/Off.png" type="Texture" id=8]
 [ext_resource path="res://Imatges/Fondos/game_background_2/layers/rocks_1.png" type="Texture" id=9]
 [ext_resource path="res://Imatges/Fondos/game_background_2/layers/rocks_2.png" type="Texture" id=10]
 [ext_resource path="res://Imatges/Fondos/game_background_2/layers/rocks_3.png" type="Texture" id=11]
 [ext_resource path="res://Imatges/Fondos/game_background_2/layers/pines.png" type="Texture" id=12]
+[ext_resource path="res://Escenes/pinxos mataD.tscn" type="PackedScene" id=13]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 1e+07, 31.5 )
+extents = Vector2( 1e+07, 28.75 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 173.5, 12.25 )
 
 [node name="Nivell 1" type="Node2D"]
 
 [node name="Límits" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Límits"]
-visible = false
 modulate = Color( 0.0745098, 0.00784314, 0.00784314, 1 )
 self_modulate = Color( 0.0627451, 0.0117647, 0.0117647, 1 )
-position = Vector2( 58, 622 )
+position = Vector2( 58, 624.75 )
 shape = SubResource( 1 )
 
 [node name="Node2D" type="Node2D" parent="."]
-position = Vector2( 75, 415 )
+position = Vector2( 480, 453 )
 
 [node name="Woodfloor" parent="Node2D" instance=ExtResource( 2 )]
 
 [node name="KinematicBody2D" parent="." instance=ExtResource( 4 )]
-position = Vector2( 28, 559 )
+position = Vector2( 19, 569 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 1e+06, 1e+06 )
@@ -86,7 +89,7 @@ region_rect = Rect2( 2777.56, 638.336, 100000, 600 )
 motion_scale = Vector2( 0.2, 1 )
 
 [node name="Muntanya 1" type="Sprite" parent="ParallaxBackground/ParallaxLayer6"]
-position = Vector2( 645, 271 )
+position = Vector2( 644, 271 )
 scale = Vector2( 0.7, 0.6 )
 texture = ExtResource( 10 )
 region_enabled = true
@@ -122,6 +125,59 @@ texture = ExtResource( 12 )
 region_enabled = true
 region_rect = Rect2( 204.123, 571.937, 1e+06, 520.261 )
 
-[node name="GameBackground2" type="Sprite" parent="."]
-position = Vector2( 2208, 1187 )
-texture = ExtResource( 6 )
+[node name="terra1" parent="." instance=ExtResource( 6 )]
+position = Vector2( 430, 516 )
+
+[node name="terra2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 124, 413 )
+
+[node name="terra3" parent="." instance=ExtResource( 6 )]
+position = Vector2( 826, 313 )
+
+[node name="pinxos1" parent="." instance=ExtResource( 13 )]
+position = Vector2( 406, 563 )
+
+[node name="pinxos2" parent="." instance=ExtResource( 13 )]
+position = Vector2( 438, 563 )
+
+[node name="pinxos3" parent="." instance=ExtResource( 13 )]
+position = Vector2( 533, 563 )
+
+[node name="pinxos4" parent="." instance=ExtResource( 13 )]
+position = Vector2( 661, 563 )
+
+[node name="pinxos5" parent="." instance=ExtResource( 13 )]
+position = Vector2( 629, 563 )
+
+[node name="pinxos6" parent="." instance=ExtResource( 13 )]
+position = Vector2( 597, 563 )
+
+[node name="pinxos7" parent="." instance=ExtResource( 13 )]
+position = Vector2( 470, 563 )
+
+[node name="pinxos8" parent="." instance=ExtResource( 13 )]
+position = Vector2( 502, 563 )
+
+[node name="pinxos9" parent="." instance=ExtResource( 13 )]
+position = Vector2( 565, 563 )
+
+[node name="pinxos10" parent="." instance=ExtResource( 13 )]
+position = Vector2( 207, 369 )
+
+[node name="pinxos11" parent="." instance=ExtResource( 13 )]
+position = Vector2( 693, 563 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visible = false
+position = Vector2( 548.5, 581.75 )
+shape = SubResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+visible = false
+position = Vector2( -67, -419.87 )
+scale = Vector2( 1, 1.82212 )
+polygon = PoolVector2Array( 242, 448.308, 254, 435.137, 257, 435.137, 289, 435.137, 301, 448.308 )
+
+[connection signal="body_entered" from="Area2D" to="KinematicBody2D" method="_on_Area2D_body_entered"]
