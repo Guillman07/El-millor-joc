@@ -53,3 +53,7 @@ func animation(velocitat):
 
 #func _on_Respawn_body_entered(body):
 	#position = Vector2(-133, 149)
+
+
+func _on_Area2D_body_entered(body):
+	get_tree().change_scene("res://Escenes/GAME OVER.tscn")
