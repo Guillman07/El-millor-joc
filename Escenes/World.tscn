@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Escenes/Global.gd" type="Script" id=1]
 [ext_resource path="res://Escenes/Ninja frog/Ninja_frog1.1.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Escenes/Trampoline.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Imatges/Fondos/game_background_1/layers/clouds_1.png" type="Texture" id=8]
 [ext_resource path="res://Escenes/Sierra.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Escenes/Woodfloor.tscn" type="PackedScene" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 2008.5, 25.5 )
@@ -81,6 +82,11 @@ region_rect = Rect2( 0, 56.397, 1e+07, 1024.61 )
 position = Vector2( 687, 545 )
 
 [node name="Area2D" parent="." instance=ExtResource( 9 )]
-position = Vector2( 780, 466 )
+position = Vector2( 908, 472 )
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2( 817, 517 )
+
+[node name="Node2D" parent="Node2D" instance=ExtResource( 10 )]
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
