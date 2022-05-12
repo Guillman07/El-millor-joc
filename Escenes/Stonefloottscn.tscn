@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Imatges/plataformas i utensilis/jumperpack_kenney/PNG/Environment/Terre de pedra.png" type="Texture" id=1]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+visible = false
+scale = Vector2( 0.6, 0.3 )
+build_mode = 1
+polygon = PoolVector2Array( -175, -47, 167, -47, 182, -44, 190, -31, 190, -19, 186, -6, 161, 33, 150, 36, -150, 47, -165, 45, -188, -9, -190, -31, -186, -42 )
+
+[node name="Sprite" type="Sprite" parent="StaticBody2D"]
+scale = Vector2( 0.6, 0.3 )
+texture = ExtResource( 1 )
