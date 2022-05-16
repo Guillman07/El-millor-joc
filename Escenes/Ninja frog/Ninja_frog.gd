@@ -50,7 +50,7 @@ func animation(speed):
 		
 	if speed.y < -2:
 		$AnimatedSprite.play("Jump")
-	
+
 
 
 	
