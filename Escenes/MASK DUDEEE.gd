@@ -7,6 +7,12 @@ var gravetat = Vector2.DOWN * 980
 var velocitat_salt = -300
 var salts = 1
 #var velocitat_avall = 1000
+func _ready():
+	$AnimatedSprite.play("Appear")
+
+func _on_AnimatedSprite_animation_finished():
+	if $AnimatedSprite.animation == 'Appear':
+		$AnimatedSprite.play('Idle')
 
 func _physics_process(delta):
 	velocitat.x = 0
