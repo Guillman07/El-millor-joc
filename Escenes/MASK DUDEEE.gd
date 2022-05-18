@@ -57,7 +57,7 @@ func animation(velocitat):
 		
 func damage_player(damage):
 	health -= damage 
-	print(health)
+	
 
 
 #func _on_Respawn_body_entered(body):

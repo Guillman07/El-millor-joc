@@ -7,9 +7,12 @@ var gravetat = Vector2.DOWN * 980
 var jump_speed = -300
 var left_jumps = 1
 #signal hit
+var health : int = 100
+#var velocitat_avall = 1000
+var damage = 20
 
 func _ready():
-	$AnimatedSprite.play("Appear")
+	$AnimatedSprite.play('Appear')
 
 func _on_AnimatedSprite_animation_finished():
 	if $AnimatedSprite.animation == 'Appear':
@@ -28,7 +31,9 @@ func _physics_process(delta):
 			left_jumps -= 1
 	if is_on_floor():
 		left_jumps = 1
-
+		
+	$TextureProgress.value = health
+	
 #if Input.is_action_just_pressed("Down 2") and is_on_floor():
 #velocitat.y = velocitat_avall
 
@@ -51,6 +56,8 @@ func animation(speed):
 	if speed.y < -2:
 		$AnimatedSprite.play("Jump")
 
-
+func damage_player(damage):
+	health -= damage 
+	
 
 	
