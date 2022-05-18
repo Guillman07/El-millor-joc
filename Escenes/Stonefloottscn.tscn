@@ -7,7 +7,6 @@
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-visible = false
 scale = Vector2( 0.6, 0.3 )
 build_mode = 1
 polygon = PoolVector2Array( -175, -47, 167, -47, 182, -44, 190, -31, 190, -19, 186, -6, 161, 33, 150, 36, -150, 47, -165, 45, -188, -9, -190, -31, -186, -42 )

@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Imatges/Fondos/game_background_2/layers/sky.png" type="Texture" id=1]
 [ext_resource path="res://Escenes/Woodfloor.tscn" type="PackedScene" id=2]
@@ -18,24 +18,34 @@
 [ext_resource path="res://Escenes/Sierra.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Escenes/Nivell 1.gd" type="Script" id=17]
 [ext_resource path="res://Escenes/Champy.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Escenes/Ninja frog/Ninja_frog1.1.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Escenes/Tileset.tres" type="TileSet" id=20]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1e+07, 28.75 )
 
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 74.25, 284.5 )
+
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 61, 12.25 )
+extents = Vector2( 175, 6.3125 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 105.5, 10 )
+extents = Vector2( 105.5, 172 )
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 60, 12.25 )
+extents = Vector2( 60, 152.5 )
 
 [sub_resource type="CircleShape2D" id=5]
 radius = 30.0832
 
 [sub_resource type="CircleShape2D" id=6]
 radius = 30.0
+
+[sub_resource type="Curve2D" id=8]
+_data = {
+"points": PoolVector2Array(  )
+}
 
 [node name="Nivell 1" type="Node2D"]
 script = ExtResource( 17 )
@@ -48,13 +58,19 @@ self_modulate = Color( 0.0627451, 0.0117647, 0.0117647, 1 )
 position = Vector2( 58, 624.75 )
 shape = SubResource( 1 )
 
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Límits"]
+modulate = Color( 1, 0, 0, 1 )
+self_modulate = Color( 1, 0, 0, 1 )
+position = Vector2( -88, 301.5 )
+shape = SubResource( 7 )
+
 [node name="Node2D" type="Node2D" parent="."]
-position = Vector2( 705, 448 )
+position = Vector2( 710, 1027 )
 
 [node name="Woodfloor" parent="Node2D" instance=ExtResource( 2 )]
 
 [node name="KinematicBody2D" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1901, 488 )
+position = Vector2( 38, 252 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 1e+06, 1e+06 )
@@ -144,95 +160,89 @@ region_enabled = true
 region_rect = Rect2( 204.123, 571.937, 1e+06, 520.261 )
 
 [node name="terra1" parent="." instance=ExtResource( 6 )]
-position = Vector2( 430, 516 )
+position = Vector2( 510, 938 )
 
 [node name="terra2" parent="." instance=ExtResource( 6 )]
-position = Vector2( 135, 446 )
+position = Vector2( 697, 681 )
 
 [node name="terra3" parent="." instance=ExtResource( 6 )]
-position = Vector2( 1835, 303 )
+position = Vector2( 1330, 815 )
 
 [node name="pinxos1" parent="." instance=ExtResource( 13 )]
-position = Vector2( 905, 562 )
+position = Vector2( 873, 667 )
 
 [node name="pinxos2" parent="." instance=ExtResource( 13 )]
-position = Vector2( 541, 712 )
+position = Vector2( 960, 667 )
 
 [node name="pinxos3" parent="." instance=ExtResource( 13 )]
-position = Vector2( 599, 757 )
+position = Vector2( 463, 270 )
 
 [node name="pinxos4" parent="." instance=ExtResource( 13 )]
-position = Vector2( 661, 563 )
+position = Vector2( 866, 716 )
 
 [node name="pinxos5" parent="." instance=ExtResource( 13 )]
-position = Vector2( 629, 563 )
+position = Vector2( 845, 747 )
 
 [node name="pinxos6" parent="." instance=ExtResource( 13 )]
-position = Vector2( 597, 563 )
+position = Vector2( 757, 734 )
 
 [node name="pinxos7" parent="." instance=ExtResource( 13 )]
-position = Vector2( 631, 780 )
+position = Vector2( 714, 269 )
 
 [node name="pinxos8" parent="." instance=ExtResource( 13 )]
-position = Vector2( 621, 760 )
+position = Vector2( 748, 269 )
 
 [node name="pinxos9" parent="." instance=ExtResource( 13 )]
 position = Vector2( 706, 767 )
 
 [node name="pinxos10" parent="." instance=ExtResource( 13 )]
-position = Vector2( 456, 171 )
+position = Vector2( 428, 270 )
 
 [node name="pinxos11" parent="." instance=ExtResource( 13 )]
-position = Vector2( 842, 562 )
+position = Vector2( 919, 701 )
 
 [node name="Mort" type="Area2D" parent="."]
 position = Vector2( 40, 0 )
 
 [node name="Area2D2" parent="Mort" instance=ExtResource( 16 )]
-position = Vector2( 1880, 390 )
+position = Vector2( 1076, 468 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mort"]
-visible = false
-position = Vector2( 626, 581.75 )
+position = Vector2( 547, 279.313 )
 shape = SubResource( 2 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Mort"]
-visible = false
-position = Vector2( 178, -617 )
+position = Vector2( 147, -58 )
 scale = Vector2( 1, 1.82212 )
 polygon = PoolVector2Array( 242, 448.308, 254, 435.137, 257, 435.137, 289, 435.137, 301, 448.308 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Mort"]
-visible = false
-position = Vector2( 135.5, 417 )
+position = Vector2( 180, 852 )
 shape = SubResource( 3 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Mort"]
-visible = false
-position = Vector2( 872, 580.25 )
+position = Vector2( 995, 846 )
 shape = SubResource( 4 )
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Mort"]
-visible = false
-position = Vector2( 1879, 390 )
+position = Vector2( 1076, 469 )
 shape = SubResource( 5 )
 
 [node name="Area2D" parent="Mort" instance=ExtResource( 16 )]
-position = Vector2( 1812, 360 )
+position = Vector2( 535, 43 )
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="Mort"]
-visible = false
-position = Vector2( 1812, 360 )
+position = Vector2( 534, 43 )
 shape = SubResource( 6 )
 
 [node name="Node2D2" parent="." instance=ExtResource( 14 )]
-position = Vector2( 207, 407 )
+position = Vector2( 392, 688 )
 
 [node name="Node2D3" parent="." instance=ExtResource( 14 )]
-position = Vector2( 136, 407 )
+position = Vector2( 571, 261 )
 
 [node name="Node2D4" parent="." instance=ExtResource( 14 )]
-position = Vector2( 64, 407 )
+position = Vector2( 404, 832 )
 
 [node name="Smallwoodloor" parent="." instance=ExtResource( 15 )]
 position = Vector2( 2044, 492 )
@@ -245,6 +255,27 @@ position = Vector2( 1913, 535 )
 
 [node name="Champy" parent="." instance=ExtResource( 18 )]
 position = Vector2( 2004, 344 )
+
+[node name="Ninja_frog" parent="." instance=ExtResource( 19 )]
+position = Vector2( 28, 559 )
+
+[node name="TileMap" type="TileMap" parent="."]
+scale = Vector2( 0.5, 0.5 )
+tile_set = ExtResource( 20 )
+cell_size = Vector2( 48, 48 )
+format = 1
+tile_data = PoolIntArray( 458767, 0, 0, 458768, 0, 0, 458769, 0, 0, 458770, 0, 0, 458771, 0, 0, 458772, 0, 0, 458779, 0, 0, 458780, 0, 0, 458781, 0, 0, 458782, 0, 0, 458783, 0, 0, 458784, 0, 0, 524302, 0, 0, 524303, 0, 0, 524304, 0, 0, 524320, 0, 0, 524321, 0, 0, 589837, 0, 0, 589838, 0, 0, 589839, 0, 0, 589840, 0, 0, 589856, 0, 0, 589857, 0, 0, 589858, 0, 0, 655372, 0, 0, 655373, 0, 0, 655374, 0, 0, 655375, 0, 0, 655376, 0, 0, 655392, 0, 0, 655393, 0, 0, 655394, 0, 0, 655395, 0, 0, 720907, 0, 0, 720908, 0, 0, 720909, 0, 0, 720910, 0, 0, 720911, 0, 0, 720912, 0, 0, 720928, 0, 0, 720929, 0, 0, 720930, 0, 0, 720931, 0, 0, 720932, 0, 0, 786432, 0, 0, 786433, 0, 0, 786434, 0, 0, 786435, 0, 0, 786436, 0, 0, 786437, 0, 0, 786438, 0, 0, 786439, 0, 0, 786440, 0, 0, 786441, 0, 0, 786442, 0, 0, 786443, 0, 0, 786444, 0, 0, 786445, 0, 0, 786446, 0, 0, 786447, 0, 0, 786448, 0, 0, 786449, 0, 0, 786450, 0, 0, 786451, 0, 0, 786452, 0, 0, 786453, 0, 0, 786454, 0, 0, 786455, 0, 0, 786456, 0, 0, 786457, 0, 0, 786458, 0, 0, 786459, 0, 0, 786460, 0, 0, 786461, 0, 0, 786462, 0, 0, 786463, 0, 0, 786464, 0, 0, 786465, 0, 0, 786466, 0, 0, 786467, 0, 0, 786468, 0, 0, 786469, 0, 0, 786470, 0, 0, 786471, 0, 0, 786472, 0, 0, 786473, 0, 0, 786474, 0, 0, 786475, 0, 0, 786476, 0, 0, 786477, 0, 0, 786478, 0, 0, 786479, 0, 0, 786480, 0, 0, 786481, 0, 0, 786482, 0, 0, 786483, 0, 0, 786484, 0, 0, 786485, 0, 0, 786486, 0, 0, 786487, 0, 0, 786488, 0, 0, 786489, 0, 0, 786490, 0, 0, 786491, 0, 0, 786492, 0, 0, 786493, 0, 0, 786494, 0, 0, 786495, 0, 0, 786496, 0, 0, 786497, 0, 0, 786498, 0, 0 )
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource( 8 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+
+[node name="Camera2D" type="Camera2D" parent="Path2D"]
+position = Vector2( 55, 387 )
+limit_left = 0
+limit_bottom = 0
+limit_smoothed = true
 
 [connection signal="body_entered" from="Mort" to="." method="_on_Mort_body_entered"]
 [connection signal="body_entered" from="Mort" to="KinematicBody2D" method="_on_Area2D_body_entered"]
