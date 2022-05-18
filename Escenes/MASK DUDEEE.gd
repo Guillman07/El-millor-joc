@@ -8,6 +8,7 @@ var velocitat_salt = -300
 var salts = 1
 #var velocitat_avall = 1000
 func _ready():
+	Global.MaskDude = self
 	$AnimatedSprite.play("Appear")
 
 func _on_AnimatedSprite_animation_finished():
@@ -38,20 +39,20 @@ func _physics_process(delta):
 	animation(velocitat)
 func animation(velocitat):
 	if velocitat.x > 0.1:
-		$MASKDUDE.play("Run")
-		$MASKDUDE.flip_h = false
+		$AnimatedSprite.play("Run")
+		$AnimatedSprite.flip_h = false
 	elif velocitat.x < -0.1:
-		$MASKDUDE.play("Run")
-		$MASKDUDE.flip_h = true
+		$AnimatedSprite.play("Run")
+		$AnimatedSprite.flip_h = true
 		
 	if abs(velocitat.x) < 0.1:
-		$MASKDUDE.play("Idle")
+		$AnimatedSprite.play("Idle")
 		
 	if velocitat.y < -2:
-		$MASKDUDE.play("Jump")
+		$AnimatedSprite.play("Jump")
 		
 	if velocitat.y > -2:
-		$MASKDUDE.play()
+		$AnimatedSprite.play()
 		
 
  
@@ -62,3 +63,7 @@ func animation(velocitat):
 
 
 
+
+
+func _on_Area2D_body_entered(body):
+	velocitat.y = -800

@@ -14,6 +14,10 @@ config/name="Joc_amg"
 run/main_scene="res://Escenes/World.tscn"
 config/icon="res://Escenes/icon.png"
 
+[autoload]
+
+Global="*res://Script_Global.gd"
+
 [display]
 
 window/size/fullscreen=true

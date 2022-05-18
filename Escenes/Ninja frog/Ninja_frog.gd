@@ -9,6 +9,7 @@ var left_jumps = 1
 #signal hit
 
 func _ready():
+	Global.Ninja = self
 	$AnimatedSprite.play("Appear")
 
 func _on_AnimatedSprite_animation_finished():
