@@ -20,6 +20,9 @@ frame = 5
 margin_left = -4.76837e-07
 margin_right = 40.0
 margin_bottom = 40.0
+rect_scale = Vector2( 1, 0.2 )
+value = 100.0
+texture_progress = ExtResource( 2 )
 
 [node name="FluidGreen" type="Sprite" parent="TextureProgress" index="0"]
 position = Vector2( 5, -31 )
