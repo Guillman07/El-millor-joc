@@ -6,13 +6,15 @@ var direccio = Vector2.DOWN
 var gravetat = Vector2.DOWN * 980
 var velocitat_salt = -300
 var salts = 1
+var health : int = 100
 #var velocitat_avall = 1000
+var damage = 20
 func _ready():
-	$AnimatedSprite.play("Appear")
+	$MASKDUDE.play("Appear")
 
 func _on_AnimatedSprite_animation_finished():
-	if $AnimatedSprite.animation == 'Appear':
-		$AnimatedSprite.play('Idle')
+	if $MASKDUDE.animation == 'Appear':
+		$MASKDUDE.play('Idle')
 
 func _physics_process(delta):
 	velocitat.x = 0
@@ -30,11 +32,11 @@ func _physics_process(delta):
 		
 	#if Input.is_action_just_pressed("Down 2") and is_on_floor():
 		#velocitat.y = velocitat_avall
-		
+	$TextureProgress.value = health
 	
 	
 	velocitat = move_and_slide(velocitat, Vector2.UP)
-	print(get_slide_count())
+	#print(get_slide_count())
 	animation(velocitat)
 func animation(velocitat):
 	if velocitat.x > 0.1:
@@ -53,8 +55,9 @@ func animation(velocitat):
 	if velocitat.y > -2:
 		$MASKDUDE.play()
 		
-
- 
+func damage_player(damage):
+	health -= damage 
+	print(health)
 
 
 #func _on_Respawn_body_entered(body):
