@@ -10,6 +10,7 @@ var health : int = 100
 #var velocitat_avall = 1000
 var damage = 20
 func _ready():
+	Global.MaskDude = self
 	$MASKDUDE.play("Appear")
 
 func _on_AnimatedSprite_animation_finished():
@@ -62,6 +63,9 @@ func damage_player(damage):
 
 #func _on_Respawn_body_entered(body):
 	#position = Vector2(-133, 149)
+
+
+
 
 
 
