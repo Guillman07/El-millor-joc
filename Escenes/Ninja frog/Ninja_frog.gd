@@ -12,7 +12,9 @@ var health : int = 100
 var damage = 20
 
 func _ready():
-	$AnimatedSprite.play('Appear')
+	Global.Ninja = self
+	$AnimatedSprite.play("Appear")
+
 
 func _on_AnimatedSprite_animation_finished():
 	if $AnimatedSprite.animation == 'Appear':

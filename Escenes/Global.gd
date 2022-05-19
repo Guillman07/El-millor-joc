@@ -19,4 +19,3 @@ func game_over():
 		get_tree().change_scene("res://Escenes/GAME OVER.tscn")
 		MaskDude_health = 100
 		Ninja_health = 100
-
