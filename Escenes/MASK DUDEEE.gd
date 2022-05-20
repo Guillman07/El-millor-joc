@@ -40,7 +40,9 @@ func _physics_process(delta):
 	velocitat = move_and_slide(velocitat, Vector2.UP)
 	#print(get_slide_count())
 	animation(velocitat)
+	
 func animation(velocitat):
+	
 	if velocitat.x > 0.1:
 		$MASKDUDE.play("Run")
 		$MASKDUDE.flip_h = false

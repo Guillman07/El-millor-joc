@@ -45,7 +45,7 @@ custom_fonts/font = ExtResource( 3 )
 text = "Game Over"
 
 [node name="Label" type="Label" parent="Menú_definitiu/CenterContainer/VBoxContainer"]
-modulate = Color( 0.498039, 0.101961, 0.101961, 1 )
+modulate = Color( 0.780392, 0.184314, 0.184314, 1 )
 margin_top = 154.0
 margin_right = 700.0
 margin_bottom = 304.0

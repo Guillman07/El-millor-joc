@@ -1,12 +1,9 @@
 extends Node2D
 
+var Ninja_health = 100
+var MaskDude_health = 100
+var dmg = 20
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
 
@@ -16,7 +13,27 @@ func _ready():
 #	pass
 
 func _on_Mort_body_entered(body):
-	get_tree().change_scene("res://Escenes/GAME OVER.tscn")
+	
+	if body.is_in_group("Ninja"):
+		body.damage_player(dmg)
+		Ninja_health -= dmg
+
+	if body.is_in_group("Mask_dude"):
+		body.damage_player(dmg)
+		MaskDude_health -= dmg
+		
+	
+	game_over()
+	
+func game_over():
+	
+	if MaskDude_health <= 0 or Ninja_health <= 0:
+		get_tree().change_scene("res://Escenes/GAME OVER.tscn")
+		MaskDude_health = 100
+		Ninja_health = 100
+	else:
+		pass
+
 
 
 	

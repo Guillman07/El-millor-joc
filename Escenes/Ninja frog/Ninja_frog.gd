@@ -18,10 +18,12 @@ func _ready():
 	
 
 func _on_Timer_timeout():
+	
 	if $AnimatedSprite.animation == 'Appear':
 		$AnimatedSprite.play('Idle')
-	
+		
 func _physics_process(delta):
+	
 	speed.x = 0
 	speed += gravetat * delta
 	if Input.is_action_pressed("Right 1"):
@@ -58,6 +60,7 @@ func animation(speed):
 		$AnimatedSprite.play("Jump")
 
 func damage_player(damage):
+	
 	health -= damage
 	$AnimatedSprite.play("Hit")
 #	$TextureProgress.value = health

@@ -4,6 +4,8 @@
 
 [node name="Nivell 1" instance=ExtResource( 1 )]
 
+[node name="Ninja_frog" parent="." index="3" groups=["Ninja"]]
+
 [node name="ParallaxLayer" parent="ParallaxBackground" index="0"]
 motion_scale = Vector2( 0, 0.98 )
 

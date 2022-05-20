@@ -356,7 +356,7 @@ shape = SubResource( 46 )
 scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 1 )
 animation = "Hit"
-frame = 6
+frame = 3
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

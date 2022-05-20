@@ -14,7 +14,7 @@ func _on_Area2D_body_entered(body):
 	if body.is_in_group("Mask_dude"):
 		body.damage_player(dmg)
 		MaskDude_health -= dmg
-		print(MaskDude_health)
+		
 	
 	game_over()
 	
