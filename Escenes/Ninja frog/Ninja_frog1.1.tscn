@@ -16,6 +16,7 @@ shape = SubResource( 1 )
 
 [node name="AnimatedSprite" parent="." index="1"]
 scale = Vector2( 1.5, 1.5 )
+frame = 6
 
 [node name="TextureProgress" type="TextureProgress" parent="." index="2"]
 margin_left = -28.0

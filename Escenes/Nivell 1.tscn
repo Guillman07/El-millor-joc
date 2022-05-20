@@ -329,10 +329,6 @@ position = Vector2( -43, -17 )
 [node name="pinxos12" parent="Punxes" instance=ExtResource( 13 )]
 position = Vector2( -66, -17 )
 
-[node name="Area2D" parent="." instance=ExtResource( 21 )]
-position = Vector2( 1163, 251 )
-scale = Vector2( 0.5, 0.5 )
-
 [node name="Node2D6" parent="." instance=ExtResource( 22 )]
 position = Vector2( 1454, 276 )
 
@@ -354,14 +350,24 @@ position = Vector2( 1575, 274 )
 [node name="Node2D9" parent="." instance=ExtResource( 22 )]
 position = Vector2( 1574, 294 )
 
+[node name="Trampoline" parent="." instance=ExtResource( 21 )]
+position = Vector2( 1163, 251 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="TimerTrampolin" type="Timer" parent="."]
+wait_time = 1.5
+
 [node name="Centre" type="Position2D" parent="."]
 script = ExtResource( 23 )
 
 [node name="Camera2D" type="Camera2D" parent="Centre"]
 current = true
+zoom = Vector2( 0.65, 0.65 )
+limit_bottom = 600
 
 [node name="Tween" type="Tween" parent="Centre"]
 
 [connection signal="body_entered" from="Mort" to="." method="_on_Mort_body_entered"]
 [connection signal="body_entered" from="Mort" to="KinematicBody2D" method="_on_Area2D_body_entered"]
-[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="Trampoline" to="." method="_on_Area2D_body_entered"]
+[connection signal="timeout" from="TimerTrampolin" to="." method="_on_TimerTrampolin_timeout"]
