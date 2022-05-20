@@ -22,7 +22,7 @@ margin_bottom = 300.0
 [node name="TextureRect" type="TextureRect" parent="CenterContainer/Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-rect_scale = Vector2( 0.35, 0.35 )
+rect_scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 2 )
 expand = true
 stretch_mode = 4
