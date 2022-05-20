@@ -17,3 +17,13 @@ func _ready():
 
 func _on_Mort_body_entered(body):
 	get_tree().change_scene("res://Escenes/GAME OVER.tscn")
+
+
+	
+func _on_Area2D_body_entered(body):
+	if body.is_in_group("Ninja"):
+		$Ninja_frog.velocitat.y = -800
+
+	if body.is_in_group("Mask_dude"):
+		$KinematicBody2D.velocitat.y = -800
+		
