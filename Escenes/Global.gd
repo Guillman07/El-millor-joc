@@ -43,3 +43,8 @@ func _on_Trampoline_body_entered(body):
 func _on_TimerTrampolin_timeout():
 	
 	$Trampoline/AnimatedSprite.play("Idle")
+
+
+func _on_Portal_body_entered(body):
+	
+	get_tree().change_scene("res://Escenes/Nivell_1.tscn")

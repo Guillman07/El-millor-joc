@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Escenes/Global.gd" type="Script" id=1]
 [ext_resource path="res://Escenes/Ninja frog/Ninja_frog1.1.tscn" type="PackedScene" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://Escenes/Woodfloor.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Escenes/MASK DUDEEE.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Escenes/Centre.gd" type="Script" id=12]
+[ext_resource path="res://Escenes/Portal_pink.tscn" type="PackedScene" id=13]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 2008.5, 25.5 )
@@ -108,6 +109,10 @@ limit_bottom = 600
 [node name="TimerTrampolin" type="Timer" parent="."]
 wait_time = 1.5
 
+[node name="Area2D2" parent="." instance=ExtResource( 13 )]
+position = Vector2( 99, 407 )
+
 [connection signal="body_entered" from="Trampoline" to="." method="_on_Trampoline_body_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="timeout" from="TimerTrampolin" to="." method="_on_TimerTrampolin_timeout"]
+[connection signal="body_entered" from="Area2D2" to="." method="_on_Portal_body_entered"]
