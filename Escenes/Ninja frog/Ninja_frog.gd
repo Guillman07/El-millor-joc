@@ -34,8 +34,6 @@ func _physics_process(delta):
 	if is_on_floor():
 		left_jumps = 1
 		
-	$TextureProgress.value = health
-	
 #if Input.is_action_just_pressed("Down 2") and is_on_floor():
 #velocitat.y = velocitat_avall
 
@@ -59,7 +57,10 @@ func animation(speed):
 		$AnimatedSprite.play("Jump")
 
 func damage_player(damage):
-	health -= damage 
+	health -= damage
+#	$TextureProgress.value = health
+	$Tween.interpolate_property($TextureProgress,'value',$TextureProgress.value, health, 0.2,Tween.TRANS_LINEAR)
+	$Tween.start()
 	
 
 	

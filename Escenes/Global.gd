@@ -14,8 +14,13 @@ func _on_Area2D_body_entered(body):
 		body.damage_player(dmg)
 		MaskDude_health -= dmg
 		print(MaskDude_health)
+	
+	game_over()
+	
 func game_over():
 	if MaskDude_health <= 0 or Ninja_health <= 0:
 		get_tree().change_scene("res://Escenes/GAME OVER.tscn")
 		MaskDude_health = 100
 		Ninja_health = 100
+	else:
+		pass
