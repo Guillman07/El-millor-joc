@@ -28,7 +28,10 @@ position = Vector2( 566, 599 )
 shape = SubResource( 1 )
 
 [node name="Ninja_frog" parent="." groups=["Ninja"] instance=ExtResource( 2 )]
-position = Vector2( 524, 330 )
+position = Vector2( 311, 540 )
+
+[node name="Pers2" parent="." instance=ExtResource( 11 )]
+position = Vector2( 238, 540 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -92,9 +95,6 @@ position = Vector2( 908, 472 )
 position = Vector2( 817, 517 )
 
 [node name="Node2D" parent="Node2D" instance=ExtResource( 10 )]
-
-[node name="Pers2" parent="." instance=ExtResource( 11 )]
-position = Vector2( 320, 481 )
 
 [node name="Centre" type="Position2D" parent="."]
 script = ExtResource( 12 )

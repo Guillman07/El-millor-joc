@@ -11,9 +11,10 @@ var health : int = 100
 var damage = 20
 func _ready():
 	Global.MaskDude = self
+	$Timer.start()
 	$MASKDUDE.play("Appear")
 
-func _on_AnimatedSprite_animation_finished():
+func _on_Timer_timeout():
 	if $MASKDUDE.animation == 'Appear':
 		$MASKDUDE.play('Idle')
 
@@ -58,6 +59,7 @@ func animation(velocitat):
 		
 func damage_player(damage):
 	health -= damage 
+	$MASKDUDE.play("Hit")
 	$Tween.interpolate_property($TextureProgress,'value',$TextureProgress.value, health, 0.2,Tween.TRANS_LINEAR)
 	$Tween.start()
 

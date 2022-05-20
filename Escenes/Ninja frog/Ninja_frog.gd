@@ -13,13 +13,14 @@ var damage = 20
 
 func _ready():
 	Global.Ninja = self
+	$Timer.start()
 	$AnimatedSprite.play("Appear")
+	
 
-
-func _on_AnimatedSprite_animation_finished():
+func _on_Timer_timeout():
 	if $AnimatedSprite.animation == 'Appear':
 		$AnimatedSprite.play('Idle')
-
+	
 func _physics_process(delta):
 	speed.x = 0
 	speed += gravetat * delta
@@ -58,9 +59,13 @@ func animation(speed):
 
 func damage_player(damage):
 	health -= damage
+	$AnimatedSprite.play("Hit")
 #	$TextureProgress.value = health
 	$Tween.interpolate_property($TextureProgress,'value',$TextureProgress.value, health, 0.2,Tween.TRANS_LINEAR)
 	$Tween.start()
 	
 
 	
+
+
+
