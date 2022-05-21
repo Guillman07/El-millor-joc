@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Imatges/Ninja el frog/Traps/Spikes/Idle.png" type="Texture" id=1]
+
+[node name="Node2D" type="Node2D"]
+scale = Vector2( 1.4, 1.4 )
+
+[node name="Sprite" type="Sprite" parent="."]
+rotation = 1.5708
+texture = ExtResource( 1 )

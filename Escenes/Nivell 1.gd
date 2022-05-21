@@ -38,7 +38,7 @@ func game_over():
 
 	
 func _on_Area2D_body_entered(body):
-	
+	get_tree().change_scene("res://Escenes/Nivell 2.tscn")
 	$Trampoline/AnimatedSprite.play("Pressed")
 	
 	if body.is_in_group("Ninja"):
@@ -53,3 +53,7 @@ func _on_Area2D_body_entered(body):
 func _on_TimerTrampolin_timeout():
 	
 	$Trampoline/AnimatedSprite.play("Idle")
+
+
+func _on_Area2D3_body_entered(body):
+	get_tree().change_scene("res://Escenes/Nivell 2.tscn")

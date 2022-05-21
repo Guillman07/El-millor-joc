@@ -74,3 +74,13 @@ func damage_player(damage):
 
 
 
+
+
+
+
+func _on_Area2D2_body_entered(body):
+	velocitat.y = -800
+
+
+func _on_Area2D4_body_entered(body):
+	velocitat.y = -800
