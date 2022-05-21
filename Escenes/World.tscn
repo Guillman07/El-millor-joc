@@ -107,7 +107,7 @@ limit_bottom = 600
 [node name="Tween" type="Tween" parent="Centre"]
 
 [node name="TimerTrampolin" type="Timer" parent="."]
-wait_time = 1.5
+wait_time = 0.9
 
 [node name="Area2D2" parent="." instance=ExtResource( 13 )]
 position = Vector2( 99, 407 )
