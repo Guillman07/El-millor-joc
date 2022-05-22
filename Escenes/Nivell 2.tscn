@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Imatges/Fondos/game_background_3/layers/ground_3.png" type="Texture" id=1]
 [ext_resource path="res://Escenes/Ninja frog/Ninja_frog1.1.tscn" type="PackedScene" id=2]
@@ -21,6 +21,7 @@
 [ext_resource path="res://Escenes/Sierra.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Escenes/Start_point.tscn" type="PackedScene" id=20]
 [ext_resource path="res://Escenes/Melon.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Escenes/Portal_pink.tscn" type="PackedScene" id=22]
 
 [node name="Nivell 2" type="Node2D"]
 script = ExtResource( 12 )
@@ -313,6 +314,9 @@ position = Vector2( 3047, -112 )
 [node name="TimerApple" type="Timer" parent="."]
 wait_time = 0.5
 
+[node name="Portal" parent="." instance=ExtResource( 22 )]
+position = Vector2( 4591, -309 )
+
 [connection signal="body_entered" from="Spikes" to="." method="_on_Die_body_entered"]
 [connection signal="body_entered" from="Spikes2" to="." method="_on_Die_body_entered"]
 [connection signal="body_entered" from="Spikes3" to="." method="_on_Die_body_entered"]
@@ -373,3 +377,4 @@ wait_time = 0.5
 [connection signal="timeout" from="TimerStart" to="." method="_on_TimerStart_timeout"]
 [connection signal="body_entered" from="Apple" to="." method="_on_Apple_body_entered"]
 [connection signal="timeout" from="TimerApple" to="." method="_on_TimerApple_timeout"]
+[connection signal="body_entered" from="Portal" to="." method="_on_Portal_body_entered"]

@@ -23,7 +23,7 @@ func _on_Die_body_entered(body):
 func game_over():
 	
 	if MaskDude_health <= 0 or Ninja_health <= 0:
-		get_tree().change_scene("res://Escenes/GAME OVER.tscn")
+		get_tree().change_scene("res://Escenes/Game_Over_Nivell2.tscn")
 		MaskDude_health = 100
 		Ninja_health = 100
 	else:
@@ -81,7 +81,7 @@ func _on_TimerStart_timeout():
 func _on_Apple_body_entered(body):
 	
 	$Apple/AnimatedSprite.play("Collect")
-	$Apple2/AnimatedSprite.play("Collect")
+	#$Apple2/AnimatedSprite.play("Collect")
 	$TimerApple.start()
 	
 	if body.is_in_group("Ninja"):
@@ -99,4 +99,4 @@ func _on_Apple_body_entered(body):
 func _on_TimerApple_timeout():
 	
 	$Apple/AnimatedSprite.play("Idle")
-	$Apple2/AnimatedSprite.play("Idle")
+	#$Apple2/AnimatedSprite.play("Idle")

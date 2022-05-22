@@ -30,7 +30,7 @@ func _on_Mort_body_entered(body):
 func game_over():
 	
 	if MaskDude_health <= 0 or Ninja_health <= 0:
-		get_tree().change_scene("res://Escenes/GAME OVER.tscn")
+		get_tree().change_scene("res://Escenes/Game_Over_Nivell_1.tscn")
 		MaskDude_health = 100
 		Ninja_health = 100
 	else:

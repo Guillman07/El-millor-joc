@@ -40,6 +40,7 @@ script = ExtResource( 3 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 5 )
 animation = "Idle"
+playing = true
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 4.0
