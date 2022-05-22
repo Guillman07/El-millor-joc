@@ -25,6 +25,8 @@ func _on_Timer_timeout():
 		
 func _physics_process(delta):
 	
+	#if Input.is_action_pressed("Attack_Ninja"):
+	#	fire()
 	speed.x = 0
 	speed += gravetat * delta
 	if Input.is_action_pressed("Right 1"):

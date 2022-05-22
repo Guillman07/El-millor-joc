@@ -18,13 +18,18 @@ func _ready():
 
 func _on_Area2D_body_entered(body):
 	
-	$Area2D/Trophy.play("Pressed")
-	$TimerTrophy.start()
+	if body.is_in_group("Ninja"):
+		$Area2D/Trophy.play("Pressed")
+		$TimerTrophy.start()
+
+	if body.is_in_group("Mask_dude"):
+		$Area2D/Trophy.play("Pressed")
+		$TimerTrophy.start()
 	
 func _on_TimerTrophy_timeout():
 	
 	$Area2D/Trophy.play("Idle")
-	get_tree().change_scene("res://Escenes/Game_Over_Nivell2.tscn")
+	get_tree().change_scene("res://Escenes/Menú_definitiu.tscn")
 	
 func _on_Trampoline_body_entered(body):
 	
