@@ -1,0 +1,177 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://Pantalla_Final.gd" type="Script" id=1]
+[ext_resource path="res://Imatges/Ninja el frog/Items/Checkpoints/End/End (Pressed) (64x64).png" type="Texture" id=2]
+[ext_resource path="res://Imatges/Ninja el frog/Items/Checkpoints/End/End (Idle).png" type="Texture" id=3]
+[ext_resource path="res://Escenes/Flag.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Escenes/Ninja frog/Ninja_frog1.1.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Escenes/MASK DUDEEE.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Escenes/Tileset.tres" type="TileSet" id=7]
+[ext_resource path="res://Escenes/Trampoline.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Escenes/Fonts/Juga.tres" type="DynamicFont" id=9]
+[ext_resource path="res://Imatges/Fondos/game_background_4/game_background_4.png" type="Texture" id=10]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 2 )
+region = Rect2( 64, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 2 )
+region = Rect2( 128, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 2 )
+region = Rect2( 192, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 2 )
+region = Rect2( 256, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 2 )
+region = Rect2( 320, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 2 )
+region = Rect2( 384, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 2 )
+region = Rect2( 448, 0, 64, 64 )
+
+[sub_resource type="SpriteFrames" id=9]
+animations = [ {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
+"loop": true,
+"name": "Pressed",
+"speed": 7.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 22, 21.5 )
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="GameBackground4" type="Sprite" parent="."]
+position = Vector2( 506, 291 )
+scale = Vector2( 0.575, 0.616667 )
+texture = ExtResource( 10 )
+
+[node name="Label" type="Label" parent="."]
+modulate = Color( 0.843137, 0.878431, 0.0980392, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 214.0
+margin_top = 18.0
+margin_right = 1414.0
+margin_bottom = 168.0
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = ExtResource( 9 )
+text = "Congratulations !"
+
+[node name="Ninja_frog" parent="." groups=["Ninja"] instance=ExtResource( 5 )]
+position = Vector2( 454, 457 )
+
+[node name="Pers2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 550, 456 )
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 7 )
+cell_size = Vector2( 48, 48 )
+format = 1
+tile_data = PoolIntArray( -1, 10, 0, -65536, 10, 0, -65535, 10, 0, -65534, 10, 0, -65533, 10, 0, -65532, 10, 0, -65531, 10, 0, -65530, 10, 0, -65529, 10, 0, -65528, 10, 0, -65527, 10, 0, -65526, 10, 0, -65525, 10, 0, -65524, 10, 0, -65523, 10, 0, -65522, 10, 0, -65521, 10, 0, -65520, 10, 0, -65519, 10, 0, -65518, 10, 0, -65517, 10, 0, -65516, 10, 0, -65515, 10, 0, 65535, 10, 0, 21, 10, 0, 131071, 10, 0, 65557, 10, 0, 196607, 10, 0, 131074, 10, 0, 131081, 10, 0, 131082, 10, 0, 131083, 10, 0, 131090, 10, 0, 131093, 10, 0, 262143, 10, 0, 196629, 10, 0, 327679, 10, 0, 262149, 10, 0, 262150, 10, 0, 262151, 10, 0, 262157, 10, 0, 262158, 10, 0, 262159, 10, 0, 262165, 10, 0, 393215, 10, 0, 327701, 10, 0, 458751, 10, 0, 393216, 10, 0, 393225, 10, 0, 393226, 10, 0, 393227, 10, 0, 393236, 10, 0, 393237, 10, 0, 524287, 10, 0, 458758, 10, 0, 458759, 10, 0, 458765, 10, 0, 458766, 10, 0, 458773, 10, 0, 589823, 10, 0, 524290, 10, 0, 524291, 10, 0, 524305, 10, 0, 524306, 10, 0, 524309, 10, 0, 655359, 10, 0, 589845, 10, 0, 720895, 10, 0, 655360, 10, 0, 655369, 10, 0, 655371, 10, 0, 655380, 10, 0, 655381, 10, 0, 786431, 10, 0, 720896, 10, 0, 720897, 10, 0, 720904, 10, 0, 720905, 10, 0, 720906, 10, 0, 720907, 10, 0, 720908, 10, 0, 720915, 10, 0, 720916, 10, 0, 720917, 10, 0, 851967, 10, 0, 786432, 10, 0, 786433, 10, 0, 786434, 10, 0, 786435, 10, 0, 786436, 10, 0, 786437, 10, 0, 786438, 10, 0, 786439, 10, 0, 786440, 10, 0, 786441, 10, 0, 786442, 10, 0, 786443, 10, 0, 786444, 10, 0, 786445, 10, 0, 786446, 10, 0, 786447, 10, 0, 786448, 10, 0, 786449, 10, 0, 786450, 10, 0, 786451, 10, 0, 786452, 10, 0, 786453, 10, 0 )
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2( 502, 258 )
+
+[node name="Trophy" type="AnimatedSprite" parent="Area2D"]
+frames = SubResource( 9 )
+animation = "Idle"
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 0, 9.5 )
+shape = SubResource( 10 )
+
+[node name="TimerTrophy" type="Timer" parent="."]
+
+[node name="Flag" parent="." instance=ExtResource( 4 )]
+position = Vector2( 985, 258 )
+
+[node name="Flag2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 31, 258 )
+
+[node name="Flag3" parent="." instance=ExtResource( 4 )]
+position = Vector2( 129, 66 )
+
+[node name="Flag4" parent="." instance=ExtResource( 4 )]
+position = Vector2( 896, 66 )
+
+[node name="Flag5" parent="." instance=ExtResource( 4 )]
+position = Vector2( 515, 66 )
+
+[node name="Trampoline" parent="." instance=ExtResource( 8 )]
+position = Vector2( 166, 358 )
+
+[node name="Trampoline2" parent="." instance=ExtResource( 8 )]
+position = Vector2( 648, 166 )
+
+[node name="Trampoline3" parent="." instance=ExtResource( 8 )]
+position = Vector2( 360, 166 )
+
+[node name="Trampoline4" parent="." instance=ExtResource( 8 )]
+position = Vector2( 841, 358 )
+
+[node name="Trampoline5" parent="." instance=ExtResource( 8 )]
+position = Vector2( 741, 550 )
+
+[node name="Trampoline6" parent="." instance=ExtResource( 8 )]
+position = Vector2( 250, 550 )
+
+[node name="TimerTrampolin" type="Timer" parent="."]
+wait_time = 0.9
+
+[node name="TimerFlag" type="Timer" parent="."]
+
+[node name="TimerFlag2" type="Timer" parent="."]
+
+[node name="TimerFlag3" type="Timer" parent="."]
+
+[node name="TimerFlag4" type="Timer" parent="."]
+
+[node name="TimerFlag5" type="Timer" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 500, 285 )
+current = true
+zoom = Vector2( 0.55, 0.6 )
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="timeout" from="TimerTrophy" to="." method="_on_TimerTrophy_timeout"]
+[connection signal="body_entered" from="Flag" to="." method="_on_Flag_body_entered"]
+[connection signal="body_entered" from="Flag2" to="." method="_on_Flag2_body_entered"]
+[connection signal="body_entered" from="Flag3" to="." method="_on_Flag3_body_entered"]
+[connection signal="body_entered" from="Flag4" to="." method="_on_Flag4_body_entered"]
+[connection signal="body_entered" from="Flag5" to="." method="_on_Flag5_body_entered"]
+[connection signal="body_entered" from="Trampoline" to="." method="_on_Trampoline_body_entered"]
+[connection signal="body_entered" from="Trampoline2" to="." method="_on_Trampoline_body_entered"]
+[connection signal="body_entered" from="Trampoline3" to="." method="_on_Trampoline_body_entered"]
+[connection signal="body_entered" from="Trampoline4" to="." method="_on_Trampoline_body_entered"]
+[connection signal="body_entered" from="Trampoline5" to="." method="_on_Trampoline_body_entered"]
+[connection signal="body_entered" from="Trampoline6" to="." method="_on_Trampoline_body_entered"]
+[connection signal="timeout" from="TimerTrampolin" to="." method="_on_TimerTrampolin_timeout"]
+[connection signal="timeout" from="TimerFlag" to="." method="_on_TimerFlag_timeout"]
+[connection signal="timeout" from="TimerFlag2" to="." method="_on_TimerFlag2_timeout"]
+[connection signal="timeout" from="TimerFlag3" to="." method="_on_TimerFlag3_timeout"]
+[connection signal="timeout" from="TimerFlag4" to="." method="_on_TimerFlag4_timeout"]
+[connection signal="timeout" from="TimerFlag5" to="." method="_on_TimerFlag5_timeout"]

@@ -35,7 +35,7 @@ func _on_Trampoline_body_entered(body):
 	$Trampoline/AnimatedSprite.play("Pressed")
 	$Trampoline2/AnimatedSprite.play("Pressed")
 	$Trampoline3/AnimatedSprite.play("Pressed")
-	#$Trampoline4/AnimatedSprite.play("Pressed")
+	$Trampoline4/AnimatedSprite.play("Pressed")
 	#$Trampoline5/AnimatedSprite.play("Pressed")
 	#$Trampoline6/AnimatedSprite.play("Pressed")
 	#$Trampoline7/AnimatedSprite.play("Pressed")
@@ -56,7 +56,7 @@ func _on_TimerTrampolin_timeout():
 	$Trampoline/AnimatedSprite.play("Idle")
 	$Trampoline2/AnimatedSprite.play("Idle")
 	$Trampoline3/AnimatedSprite.play("Idle")
-	#$Trampoline4/AnimatedSprite.play("Idle")
+	$Trampoline4/AnimatedSprite.play("Idle")
 	#$Trampoline5/AnimatedSprite.play("Idle")
 	#$Trampoline6/AnimatedSprite.play("Idle")
 	#$Trampoline7/AnimatedSprite.play("Idle")
@@ -66,7 +66,7 @@ func _on_TimerTrampolin_timeout():
 
 func _on_Portal_body_entered(body):
 	
-	get_tree().change_scene("res://Escenes/Menú_definitiu.tscn")
+	get_tree().change_scene("res://Escenes/Pantalla_Final.tscn")
 
 func _on_Start_point_body_entered(body):
 	
