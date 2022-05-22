@@ -1,0 +1,70 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Escenes/Tileset.tres" type="TileSet" id=1]
+[ext_resource path="res://Escenes/Ninja frog/Ninja_frog1.1.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Escenes/MASK DUDEEE.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Escenes/Fonts/Juga.tres" type="DynamicFont" id=4]
+[ext_resource path="res://Escenes/Tutorial.gd" type="Script" id=5]
+[ext_resource path="res://Imatges/Fondos/1624.jpg" type="Texture" id=6]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 5 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 527, 292 )
+current = true
+zoom = Vector2( 0.6, 0.61 )
+
+[node name="1624" type="Sprite" parent="."]
+position = Vector2( 504.5, 294.25 )
+scale = Vector2( 0.206923, 0.235549 )
+texture = ExtResource( 6 )
+
+[node name="Control" type="Control" parent="."]
+margin_left = 1037.0
+margin_top = 381.0
+margin_right = 1037.0
+margin_bottom = 381.0
+
+[node name="Label2" type="Label" parent="Control"]
+modulate = Color( 0.894118, 0.435294, 0.909804, 1 )
+margin_left = -1026.0
+margin_top = -245.0
+margin_right = 1049.0
+margin_bottom = 364.0
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = ExtResource( 4 )
+text = "Ninja Frog :          Mask Dude :
+Right - \"D\"            Right - \"->\"
+Left - \"A\"               Left - \"<-\"
+Jump - \"W\"           Jump - \"Arow up\"
+              Both have double jump"
+
+[node name="Label" type="Label" parent="Control"]
+modulate = Color( 0.894118, 0.435294, 0.909804, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -690.0
+margin_top = -383.0
+margin_right = -390.0
+margin_bottom = -233.0
+custom_fonts/font = ExtResource( 4 )
+text = "Play"
+
+[node name="TextureButton" type="TextureButton" parent="Control/Label"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Ninja_frog" parent="." instance=ExtResource( 2 )]
+position = Vector2( 262, 547 )
+
+[node name="Pers2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 794, 553 )
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 48, 48 )
+format = 1
+tile_data = PoolIntArray( -1, 5, 0, -65514, 5, 0, 65535, 5, 0, 22, 5, 0, 131071, 5, 0, 65558, 5, 0, 196607, 5, 0, 131094, 5, 0, 262143, 5, 0, 196630, 5, 0, 327679, 5, 0, 262166, 5, 0, 393215, 5, 0, 327702, 5, 0, 458751, 5, 0, 393238, 5, 0, 524287, 5, 0, 458774, 5, 0, 589823, 5, 0, 524310, 5, 0, 655359, 5, 0, 589824, 5, 0, 589845, 5, 0, 589846, 5, 0, 720895, 5, 0, 655360, 5, 0, 655361, 5, 0, 655380, 5, 0, 655381, 5, 0, 655382, 5, 0, 786431, 5, 0, 720896, 5, 0, 720897, 5, 0, 720898, 5, 0, 720904, 5, 0, 720905, 5, 0, 720906, 5, 0, 720907, 5, 0, 720908, 5, 0, 720909, 5, 0, 720915, 5, 0, 720916, 5, 0, 720917, 5, 0, 720918, 5, 0, 851967, 5, 0, 786432, 5, 0, 786433, 5, 0, 786434, 5, 0, 786435, 5, 0, 786436, 5, 0, 786437, 5, 0, 786438, 5, 0, 786439, 5, 0, 786440, 5, 0, 786441, 5, 0, 786442, 5, 0, 786443, 5, 0, 786444, 5, 0, 786445, 5, 0, 786446, 5, 0, 786447, 5, 0, 786448, 5, 0, 786449, 5, 0, 786450, 5, 0, 786451, 5, 0, 786452, 5, 0, 786453, 5, 0, 786454, 5, 0 )
+
+[connection signal="pressed" from="Control/Label/TextureButton" to="." method="_on_TextureButton_pressed"]

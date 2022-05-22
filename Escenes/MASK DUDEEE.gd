@@ -69,18 +69,15 @@ func damage_player(damage):
 #func _on_Respawn_body_entered(body):
 	#position = Vector2(-133, 149)
 
-
-
-
-
-
-
-
-
-
 func _on_Area2D2_body_entered(body):
 	velocitat.y = -800
 
 
 func _on_Area2D4_body_entered(body):
 	velocitat.y = -800
+
+func heal_player(damage):
+	
+	health += damage
+	$Tween.interpolate_property($TextureProgress,'value',$TextureProgress.value, health, 0.2,Tween.TRANS_LINEAR)
+	$Tween.start()

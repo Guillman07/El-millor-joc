@@ -3,6 +3,8 @@ extends Node2D
 var Ninja_health = 100
 var MaskDude_health = 100
 var dmg = 20
+var Ninja_heal_left = 1
+var Mask_heal_left = 1
 
 func _ready():
 	pass # Replace with function body.
@@ -59,3 +61,37 @@ func _on_TimerTrampolin_timeout():
 func _on_Portal_body_entered(body):
 	
 	get_tree().change_scene("res://Escenes/Nivell 2.tscn")
+	
+func _on_Start_point_body_entered(body):
+	
+	$Start_point/AnimatedSprite.play("Moving")
+	$Start_point2/AnimatedSprite.play("Moving")
+	$TimerStart.start()
+
+func _on_TimerStart_timeout():
+	
+	$Start_point/AnimatedSprite.play("Idle")
+	$Start_point2/AnimatedSprite.play("Idle")
+
+func _on_Apple_body_entered(body):
+	
+	$Apple/AnimatedSprite.play("Collect")
+	$Apple2/AnimatedSprite.play("Collect")
+	$TimerApple.start()
+	
+	if body.is_in_group("Ninja"):
+		if Ninja_heal_left > 0.1:
+			body.heal_player(dmg)
+			Ninja_health += dmg
+			Ninja_heal_left -= 1
+			
+	if body.is_in_group("Mask_dude"):
+		if Mask_heal_left > 0.1:
+			body.heal_player(dmg)
+			MaskDude_health -= dmg
+			Mask_heal_left -= 1
+
+func _on_TimerApple_timeout():
+	
+	$Apple/AnimatedSprite.play("Idle")
+	$Apple2/AnimatedSprite.play("Idle")

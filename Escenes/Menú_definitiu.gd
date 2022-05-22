@@ -22,3 +22,7 @@ func _process(delta):
 
 func _on_TextureButton_pressed():
 	get_tree().change_scene("res://Escenes/World.tscn")
+
+
+func _on_Tutorial_pressed():
+	get_tree().change_scene("res://Escenes/Tutorial.tscn")
