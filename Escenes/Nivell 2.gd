@@ -66,7 +66,7 @@ func _on_TimerTrampolin_timeout():
 
 func _on_Portal_body_entered(body):
 	
-	get_tree().change_scene("res://Escenes/Nivell_1.tscn")
+	get_tree().change_scene("res://Escenes/Menú_definitiu.tscn")
 
 func _on_Start_point_body_entered(body):
 	
