@@ -32,7 +32,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 1 )
 }
 
-[node name="KinematicBody2D" type="KinematicBody2D" groups=["Shuriken"]]
+[node name="KinematicBody2D2" type="KinematicBody2D" groups=["Shuriken"]]
 scale = Vector2( 0.25, 0.25 )
 script = ExtResource( 2 )
 

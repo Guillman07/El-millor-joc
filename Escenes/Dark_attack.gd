@@ -17,15 +17,15 @@ func _process(delta):
 	position += transform.x * speed * delta
 
 
-func _on_Dark_attack_body_entered(body):
+#func _on_Dark_attack_body_entered(body):
 
-	if body.is_in_group("Ninja"):
-		body.damage_player(dmg)
-		$Nivell2.Ninja_health -= dmg
+	#if body.is_in_group("Ninja"):
+		#body.damage_player(dmg)
+		#$Nivell2.Ninja_health -= dmg
 
-	if body.is_in_group("Mask_dude"):
-		body.damage_player(dmg)
-		$Nivell2.MaskDude_health -= dmg
+	#if body.is_in_group("Mask_dude"):
+		#body.damage_player(dmg)
+		#$Nivell2.MaskDude_health -= dmg
 		
 	
 	
