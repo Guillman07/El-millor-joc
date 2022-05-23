@@ -7,16 +7,14 @@ var gravetat = Vector2.DOWN * 980
 var velocitat_salt = -300
 var salts = 1
 var health : int = 100
+var apareixent = true
+var rebent = false
 #var velocitat_avall = 1000
 var damage = 20
 func _ready():
 	Global.MaskDude = self
-	$Timer.start()
 	$MASKDUDE.play("Appear")
 
-func _on_Timer_timeout():
-	if $MASKDUDE.animation == 'Appear':
-		$MASKDUDE.play('Idle')
 
 func _physics_process(delta):
 	velocitat.x = 0
@@ -42,25 +40,26 @@ func _physics_process(delta):
 	animation(velocitat)
 	
 func animation(velocitat):
-	
-	if velocitat.x > 0.1:
-		$MASKDUDE.play("Run")
-		$MASKDUDE.flip_h = false
-	elif velocitat.x < -0.1:
-		$MASKDUDE.play("Run")
-		$MASKDUDE.flip_h = true
-		
-	if abs(velocitat.x) < 0.1:
-		$MASKDUDE.play("Idle")
-		
-	if velocitat.y < -2:
-		$MASKDUDE.play("Jump")
-		
-	if velocitat.y > -2:
-		$MASKDUDE.play()
+	if not apareixent and not rebent:
+		if velocitat.x > 0.1:
+			$MASKDUDE.play("Run")
+			$MASKDUDE.flip_h = false
+		elif velocitat.x < -0.1:
+			$MASKDUDE.play("Run")
+			$MASKDUDE.flip_h = true
+			
+		if abs(velocitat.x) < 0.1:
+			$MASKDUDE.play("Idle")
+			
+		if velocitat.y < -2:
+			$MASKDUDE.play("Jump")
+			
+		if velocitat.y > -2:
+			$MASKDUDE.play()
 		
 func damage_player(damage):
-	health -= damage 
+	health -= damage
+	rebent = true
 	$MASKDUDE.play("Hit")
 	$Tween.interpolate_property($TextureProgress,'value',$TextureProgress.value, health, 0.2,Tween.TRANS_LINEAR)
 	$Tween.start()
@@ -81,3 +80,10 @@ func heal_player(damage):
 	health += damage
 	$Tween.interpolate_property($TextureProgress,'value',$TextureProgress.value, health, 0.2,Tween.TRANS_LINEAR)
 	$Tween.start()
+
+
+func _on_MASKDUDE_animation_finished():
+	if $MASKDUDE.animation == 'Appear':
+		apareixent = false
+	if $MASKDUDE.animation == 'Hit':
+		rebent = false

@@ -10,19 +10,13 @@ var left_jumps = 1
 var health : int = 100
 #var velocitat_avall = 1000
 var damage = 20
+var apareixent = true
+var rebent = false
 
 func _ready():
 	Global.Ninja = self
 	$AnimatedSprite.play("Appear")
-	$Timer.start()
 	
-	
-
-func _on_Timer_timeout():
-	
-	if $AnimatedSprite.animation == 'Appear':
-		$AnimatedSprite.play('Idle')
-		
 func _physics_process(delta):
 	
 	#if Input.is_action_pressed("Attack_Ninja"):
@@ -49,22 +43,24 @@ func _physics_process(delta):
 	animation(speed)
 
 func animation(speed):
-	if speed.x > 0.1:
-		$AnimatedSprite.play("Run")
-		$AnimatedSprite.flip_h = false
-	elif speed.x < -0.1:
-		$AnimatedSprite.play("Run")
-		$AnimatedSprite.flip_h = true
-	
-	if abs(speed.x) < 0.1:
-		$AnimatedSprite.play("Idle")
+	if not apareixent and not rebent:
+		if speed.x > 0.1:
+			$AnimatedSprite.play("Run")
+			$AnimatedSprite.flip_h = false
+		elif speed.x < -0.1:
+			$AnimatedSprite.play("Run")
+			$AnimatedSprite.flip_h = true
 		
-	if speed.y < -2:
-		$AnimatedSprite.play("Jump")
+		if abs(speed.x) < 0.1:
+			$AnimatedSprite.play("Idle")
+			
+		if speed.y < -2:
+			$AnimatedSprite.play("Jump")
 
 func damage_player(damage):
 	
 	health -= damage
+	rebent = true
 	$AnimatedSprite.play("Hit")
 #	$TextureProgress.value = health
 	$Tween.interpolate_property($TextureProgress,'value',$TextureProgress.value, health, 0.2,Tween.TRANS_LINEAR)
@@ -76,5 +72,9 @@ func heal_player(damage):
 	$Tween.interpolate_property($TextureProgress,'value',$TextureProgress.value, health, 0.2,Tween.TRANS_LINEAR)
 	$Tween.start()
 
-
+func _on_AnimatedSprite_animation_finished():
+	if $AnimatedSprite.animation == 'Appear':
+		apareixent = false
+	if $AnimatedSprite.animation == 'Hit':
+		rebent = false
 

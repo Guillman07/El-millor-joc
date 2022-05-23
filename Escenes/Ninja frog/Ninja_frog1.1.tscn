@@ -16,7 +16,7 @@ shape = SubResource( 1 )
 
 [node name="AnimatedSprite" parent="." index="1"]
 scale = Vector2( 1.5, 1.5 )
-frame = 6
+frame = 1
 
 [node name="TextureProgress" type="TextureProgress" parent="." index="2"]
 margin_left = -28.0
@@ -30,10 +30,5 @@ texture_progress = ExtResource( 2 )
 
 [node name="Tween" type="Tween" parent="." index="3"]
 
-[node name="Timer" type="Timer" parent="." index="4"]
-wait_time = 1.5
-
-[node name="Reload" type="Timer" parent="." index="5"]
+[node name="Reload" type="Timer" parent="." index="4"]
 wait_time = 0.5
-
-[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
