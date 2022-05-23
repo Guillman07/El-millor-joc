@@ -4,18 +4,12 @@ const bullet_scene = preload("res://Escenes/Dark_attack.tscn")
 onready var shoot_timer = $ShootTimer
 onready var rotater = $Rotater
 
-const rotate_speed = 150
+const rotate_speed = 80
 const shooter_timer_wait_time = 0.2
-const spawpoint_point_count = 4
+const spawpoint_point_count = 3
 const radius = 100
 var health = 1000
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	var step = 2 * PI / spawpoint_point_count
 	for i in range(spawpoint_point_count):
