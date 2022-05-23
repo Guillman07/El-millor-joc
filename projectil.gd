@@ -8,6 +8,8 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func Front(delta):
 	position.x += velocitat * delta
 	
+func up(delta):
+	position.y += velocitat * delta

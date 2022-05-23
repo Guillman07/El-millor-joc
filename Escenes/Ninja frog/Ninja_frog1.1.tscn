@@ -8,6 +8,7 @@
 extents = Vector2( 17, 19.5 )
 
 [node name="Ninja_frog" instance=ExtResource( 1 )]
+Delay = 0.5
 
 [node name="CollisionShape2D" parent="." index="0"]
 visible = false
@@ -16,7 +17,6 @@ shape = SubResource( 1 )
 
 [node name="AnimatedSprite" parent="." index="1"]
 scale = Vector2( 1.5, 1.5 )
-frame = 2
 
 [node name="TextureProgress" type="TextureProgress" parent="." index="2"]
 margin_left = -28.0
@@ -31,4 +31,11 @@ texture_progress = ExtResource( 2 )
 [node name="Tween" type="Tween" parent="." index="3"]
 
 [node name="Reload" type="Timer" parent="." index="4"]
-wait_time = 0.5
+one_shot = true
+
+[node name="TimerDouble" type="Timer" parent="." index="5"]
+
+[node name="Node2D" type="Node2D" parent="." index="6"]
+
+[node name="Position2D" type="Position2D" parent="Node2D" index="0"]
+position = Vector2( 30, 0 )

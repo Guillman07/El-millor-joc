@@ -6,6 +6,7 @@ var Ninja_health = 100
 var MaskDude_health = 100
 var Ninja_heal_left = 1
 var Mask_heal_left = 1
+var boss_health = 1000
 
 func _on_Die_body_entered(body):
 	
@@ -36,10 +37,10 @@ func _on_Trampoline_body_entered(body):
 	$Trampoline2/AnimatedSprite.play("Pressed")
 	$Trampoline3/AnimatedSprite.play("Pressed")
 	$Trampoline4/AnimatedSprite.play("Pressed")
-	#$Trampoline5/AnimatedSprite.play("Pressed")
-	#$Trampoline6/AnimatedSprite.play("Pressed")
-	#$Trampoline7/AnimatedSprite.play("Pressed")
-	#$Trampoline8/AnimatedSprite.play("Pressed")
+	$Trampoline5/AnimatedSprite.play("Pressed")
+	$Trampoline6/AnimatedSprite.play("Pressed")
+	$Trampoline7/AnimatedSprite.play("Pressed")
+	$Trampoline8/AnimatedSprite.play("Pressed")
 	#$Trampoline9/AnimatedSprite.play("Pressed")
 	#$Trampoline10/AnimatedSprite.play("Pressed")
 	
@@ -57,16 +58,19 @@ func _on_TimerTrampolin_timeout():
 	$Trampoline2/AnimatedSprite.play("Idle")
 	$Trampoline3/AnimatedSprite.play("Idle")
 	$Trampoline4/AnimatedSprite.play("Idle")
-	#$Trampoline5/AnimatedSprite.play("Idle")
-	#$Trampoline6/AnimatedSprite.play("Idle")
-	#$Trampoline7/AnimatedSprite.play("Idle")
-	#$Trampoline8/AnimatedSprite.play("Idle")
+	$Trampoline5/AnimatedSprite.play("Idle")
+	$Trampoline6/AnimatedSprite.play("Idle")
+	$Trampoline7/AnimatedSprite.play("Idle")
+	$Trampoline8/AnimatedSprite.play("Idle")
 	#$Trampoline9/AnimatedSprite.play("Idle")
 	#$Trampoline10/AnimatedSprite.play("Idle")
 
 func _on_Portal_body_entered(body):
-	
-	get_tree().change_scene("res://Escenes/Pantalla_Final.tscn")
+	if body.is_in_group("Ninja") and boss_health <= 0:
+		get_tree().change_scene("res://Escenes/Pantalla_Final.tscn")
+		
+	if body.is_in_group("Mask_dude")and boss_health <= 0:
+		get_tree().change_scene("res://Escenes/Pantalla_Final.tscn")
 
 func _on_Start_point_body_entered(body):
 	
@@ -100,3 +104,26 @@ func _on_TimerApple_timeout():
 	
 	$Apple/AnimatedSprite.play("Idle")
 	#$Apple2/AnimatedSprite.play("Idle")
+
+
+func _on_Boss_body_entered(body):
+	if body.is_in_group("Shuriken"):
+		$Boss.damage_Boss(dmg)
+		boss_health -= 20
+	
+	if body.is_in_group("Ninja"):
+		$Boss.damage_Boss(dmg)
+		body.damage_player(dmg)
+		Ninja_health -= dmg
+		boss_health -= 20
+	if body.is_in_group("Mask_dude"):
+		$Boss.damage_Boss(dmg)
+		body.damage_player(dmg)
+		MaskDude_health -= dmg
+		boss_health -= 20
+	pass_level()
+	
+func pass_level():
+	if boss_health <= 0:
+		$Boss.queue_free()
+		$Portal.show()

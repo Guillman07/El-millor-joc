@@ -1,5 +1,9 @@
 extends KinematicBody2D
 
+const bulletPath = preload("res://Shuriken.tscn")
+onready var Reload := $Reload
+export var Delay: float = 0.1
+
 var base_speed = 300
 var speed = Vector2.ZERO
 var direccio = Vector2.DOWN
@@ -34,8 +38,9 @@ func _physics_process(delta):
 	if is_on_floor():
 		left_jumps = 1
 		
-#if Input.is_action_just_pressed("Down 2") and is_on_floor():
-#velocitat.y = velocitat_avall
+	if Input.is_action_pressed("Ninja_Attack") and Reload.is_stopped() :
+		shoot()
+	$Node2D.look_at(get_global_mouse_position())
 
 
 
@@ -78,3 +83,13 @@ func _on_AnimatedSprite_animation_finished():
 	if $AnimatedSprite.animation == 'Hit':
 		rebent = false
 
+func shoot():
+	
+	var bullet = bulletPath.instance()
+	
+	get_parent().add_child(bullet)
+	bullet.position = $Node2D/Position2D.global_position
+	
+	bullet.velocity = get_global_mouse_position() - bullet.position
+	
+	Reload.start(Delay)
