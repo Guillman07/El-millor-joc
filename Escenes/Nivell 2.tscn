@@ -122,6 +122,7 @@ position = Vector2( 7563, 482 )
 [node name="Ninja" type="Area2D" parent="Ninja_frog"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ninja_frog/Ninja"]
+visible = false
 position = Vector2( 0.5, 4 )
 shape = SubResource( 1 )
 
@@ -131,6 +132,7 @@ position = Vector2( 7508, 488 )
 [node name="Mask_dude" type="Area2D" parent="Pers2"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pers2/Mask_dude"]
+visible = false
 position = Vector2( 0.5, 3.5 )
 shape = SubResource( 1 )
 
