@@ -13,7 +13,7 @@ var left_jumps = 1
 #signal hit
 var health : int = 100
 #var velocitat_avall = 1000
-var damage = 20
+ #var damage = 20
 var apareixent = true
 var rebent = false
 

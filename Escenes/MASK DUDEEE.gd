@@ -10,7 +10,7 @@ var health : int = 100
 var apareixent = true
 var rebent = false
 #var velocitat_avall = 1000
-var damage = 20
+
 func _ready():
 	Global.MaskDude = self
 	$MASKDUDE.play("Appear")

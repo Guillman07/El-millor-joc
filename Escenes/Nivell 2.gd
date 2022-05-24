@@ -110,7 +110,8 @@ func _on_Boss_body_entered(body):
 	if body.is_in_group("Shuriken"):
 		$Boss.damage_Boss(dmg)
 		boss_health -= 20
-	
+		body.queue_free()
+		
 	if body.is_in_group("Ninja"):
 		$Boss.damage_Boss(dmg)
 		body.damage_player(dmg)
@@ -127,3 +128,20 @@ func pass_level():
 	if boss_health <= 0:
 		$Boss.queue_free()
 		$Portal.show()
+
+
+func _on_Mask_dude_area_entered(area):
+	if area.is_in_group("Dark"):
+		$Pers2.damage_player(dmg)
+		MaskDude_health -= dmg
+		area.queue_free()
+	
+	game_over()
+
+func _on_Ninja_area_entered(area):
+	if area.is_in_group("Dark"):
+		$Ninja_frog.damage_player(dmg)
+		Ninja_health -= dmg
+		area.queue_free()
+	
+	game_over()
