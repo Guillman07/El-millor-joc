@@ -154,7 +154,6 @@ wait_time = 0.9
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 500, 285 )
 current = true
-zoom = Vector2( 0.55, 0.6 )
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="timeout" from="TimerTrophy" to="." method="_on_TimerTrophy_timeout"]
