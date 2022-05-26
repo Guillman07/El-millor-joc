@@ -1139,6 +1139,7 @@ position = Vector2( 2957, -36 )
 [node name="Node2D" parent="Node2D13" index="0" instance=ExtResource( 6 )]
 
 [node name="Camera2D" parent="Centre" index="0"]
+zoom = Vector2( 1, 1 )
 limit_left = 0
 limit_bottom = 601
 
