@@ -10,11 +10,6 @@
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 5 )
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 527, 292 )
-current = true
-zoom = Vector2( 0.6, 0.61 )
-
 [node name="1624" type="Sprite" parent="."]
 position = Vector2( 504.5, 294.25 )
 scale = Vector2( 0.206923, 0.235549 )
@@ -28,16 +23,18 @@ margin_bottom = 381.0
 
 [node name="Label2" type="Label" parent="Control"]
 modulate = Color( 0.894118, 0.435294, 0.909804, 1 )
-margin_left = -1026.0
-margin_top = -245.0
-margin_right = 1049.0
-margin_bottom = 364.0
-rect_scale = Vector2( 0.5, 0.5 )
+margin_left = -785.0
+margin_top = -219.0
+margin_right = 1290.0
+margin_bottom = 849.0
+rect_scale = Vector2( 0.25, 0.25 )
 custom_fonts/font = ExtResource( 4 )
 text = "Ninja Frog :          Mask Dude :
 Right - \"D\"            Right - \"->\"
 Left - \"A\"               Left - \"<-\"
 Jump - \"W\"           Jump - \"Arow up\"
+Left click
+to shoot.
               Both have double jump"
 
 [node name="Label" type="Label" parent="Control"]
